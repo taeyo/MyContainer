@@ -286,3 +286,24 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+
+# Module directory
+.terraform/
+
+# IDEA related directory
+.idea/
+
+# cluster.yml file (Output)
+cluster.yml
+
+# rke binary file
+rke_linux-amd64
+
+# PEM, PUB file
+*.pem
+*.pub
