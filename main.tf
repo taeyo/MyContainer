@@ -12,7 +12,7 @@ resource "azurerm_resource_group" "rg-taeyo-group" {
 resource "azurerm_storage_account" "taeyostore" {
   name = "taeyostore"
   location = "japaneast"
-  resource_group_name = "${azurerm_resource_group.rke-group.name}"
+  resource_group_name = "${azurerm_resource_group.rg-taeyo-group}"
   account_replication_type = "LRS"
   account_tier = "Standard"
 }
@@ -20,6 +20,6 @@ resource "azurerm_storage_account" "taeyostore" {
 resource "azurerm_container_registry" "taeyoegistry" {
   name = "taeyoreg"
   location = "japaneast"
-  resource_group_name = "${azurerm_resource_group.rke-group.name}"
-  storage_account_id = "${azurerm_storage_account.arkregstore.id}"
+  resource_group_name = "${azurerm_resource_group.rg-taeyo-group}"
+  storage_account_id = "${azurerm_storage_account.taeyostore.id}"
 }
